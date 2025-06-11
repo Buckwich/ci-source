@@ -12,6 +12,6 @@ jobs:
 
   trigger-repo-a:
     needs: build
-    uses: Buckwich/ci-target/blob/main/.github/workflows/blank.yml@main
+    uses: Buckwich/ci-target/.github/workflows/blank.yml@main
     with: {}
     secrets: inherit
