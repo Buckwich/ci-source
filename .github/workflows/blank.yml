@@ -25,6 +25,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           event-type: test-evetnt
-          repository: Buckwich/kle-converter
+          repository: camunda/camunda-docs-modeler-screenshots
           token: ${{secrets.TEST}}
           
