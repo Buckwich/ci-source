@@ -26,4 +26,5 @@ jobs:
         with:
           event-type: test-event
           repository: Buckwich/ci-target
+          token: ${{secrets.TEST}}
           
