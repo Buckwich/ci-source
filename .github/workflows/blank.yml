@@ -1,30 +1,17 @@
-
-name: CI
-
+# .github/workflows/trigger-repo-a.yml
+name: Trigger Repo A Workflow
 
 on:
+  push:  # Or whatever trigger Repo B uses
 
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - run: echo "Repo B workflow running"
 
-      # Runs a single command using the runners shell
-      - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          event-type: test-evetnt
-          repository: camunda/camunda-docs-modeler-screenshots
-          token: ${{secrets.TEST}}
-          
+  trigger-repo-a:
+    needs: build
+    uses: Buckwich/ci-target/blob/main/.github/workflows/blank.yml@main
+    with: {}
+    secrets: inherit
