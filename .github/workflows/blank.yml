@@ -24,7 +24,7 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
-          event-type: test-event
+          event-type: test-evetnt
           repository: Buckwich/ci-target
           token: ${{secrets.TEST}}
           
