@@ -3,7 +3,8 @@ name: Trigger Repo A Workflow
 
 on:
   workflow_dispatch:  # Or whatever trigger Repo B uses
-
+permissions:
+  contents: write  
 jobs:
   build:
     runs-on: ubuntu-latest
