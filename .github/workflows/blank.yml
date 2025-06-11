@@ -2,7 +2,7 @@
 name: Trigger Repo A Workflow
 
 on:
-  push:  # Or whatever trigger Repo B uses
+  workflow_dispatch:  # Or whatever trigger Repo B uses
 
 jobs:
   build:
